@@ -3,7 +3,7 @@ export class Paciente {
     apellido: string;
     dni: number;
     sexo: string;
-    fechaDeNacimiento: Date;
+    fechaDeNacimiento: Date = new Date();
     localidad: string;
     usuario: string;
     contrasena: string;

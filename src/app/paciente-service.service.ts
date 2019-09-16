@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Paciente } from './paciente';
 @Injectable({
@@ -17,7 +17,8 @@ export class PacienteServiceService {
      return this.http.get<Paciente[]>(this.pacientesUrl);
 
    }
-   public insertar(paciente: Paciente){
-     return this.http.post<Paciente>(this.pacientesUrl,paciente)
+   public insertar(paciente: Paciente){    
+    
+     return this.http.post<Paciente>('http://localhost:8080/pacientes/insertar',paciente)
    }
 }

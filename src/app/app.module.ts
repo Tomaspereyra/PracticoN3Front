@@ -8,6 +8,7 @@ import { FichaComponent } from './ficha/ficha.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FichaServiceService } from './ficha-service.service';
 import { AltapacienteComponent } from './altapaciente/altapaciente.component';
+import { PacienteServiceService } from './paciente-service.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { AltapacienteComponent } from './altapaciente/altapaciente.component';
     ReactiveFormsModule
     
   ],
-  providers: [FichaServiceService],
+  providers: [FichaServiceService,PacienteServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
