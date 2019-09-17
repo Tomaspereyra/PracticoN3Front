@@ -19,7 +19,7 @@ export class FichaComponent implements OnInit {
   onSubmit(){
     this.ficha.paciente = JSON.parse(sessionStorage.getItem('currentUser'));
     this.fichaService.guardar(this.ficha).subscribe(res=>{console.log(res)});
-    
+    console.log(this.ficha);
     alert("Ficha ingresada");
 
   }

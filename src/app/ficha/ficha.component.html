@@ -6,7 +6,7 @@
             <div class="form-group">
                     <label for="exampleFormControlSelect1">Comida</label>
                    
-                    <select name="tipoDeComida" placeholder="Tipo de comida"  class="form-control" id="exampleFormControlSelect1" [(ngModel)]="ficha.tipoDeComida">
+                    <select  id="tipoDeComida" required name="tipoDeComida" placeholder="Tipo de comida"  class="form-control" id="exampleFormControlSelect1" [(ngModel)]="ficha.tipoDeComida" #tipoDeComida="ngModel">
                      
                       <option value="DESAYUNO">Desayuno</option>
                       <option value="ALMUERZO">Almuerzo</option>
@@ -14,27 +14,35 @@
                       <option value="CENA">Cena</option>
                     </select>
              </div>
+             <div [hidden]="!tipoDeComida.pristine" class="alert alert-danger">Debe ingresar el tipo de comida</div>
         <div class="form-group">
           <label for="name">Comida principal</label>
-          <input type="text" [(ngModel)]="ficha.comidaPrincipal" 
+          <input type="text" [(ngModel)]="ficha.comidaPrincipal" required #comidaPrincipal="ngModel"
             class="form-control" id="name" name="comidaPrincipal" placeholder="Comida principal">
         </div>
+        <div [hidden]="!comidaPrincipal.pristine" class="alert alert-danger">Debe ingresar la comida principal</div>
+
         <div class="form-group">
           <label for="email">Comida Secundaria</label>
-          <input type="text" [(ngModel)]="ficha.comidaSecundaria" 
+          <input type="text" [(ngModel)]="ficha.comidaSecundaria" required #comidaSecundaria="ngModel" 
             class="form-control" id="secundaria" name="comidaSecundaria" placeholder="Comida secundaria">
         </div>
+        <div [hidden]="!comidaSecundaria.pristine" class="alert alert-danger">Debe ingresar la comida secundaria</div>
+
        
         <div class="form-group">
           <label for="bebida">Bebida</label>
-          <input type="text" [(ngModel)]="ficha.bebida" 
+          <input type="text" [(ngModel)]="ficha.bebida" required #bebida="ngModel"
             class="form-control" id="bebida" name="bebida" placeholder="Bebida">
         </div>
-        <div class="form-group" *ngIf="ficha.tipoDeComida!=ALMUERZO || ficha.tipoDeComida!=CENA ">
+        <div [hidden]="!bebida.pristine" class="alert alert-danger">Debe ingresar la bebida</div>
+
+        <div class="form-group" *ngIf="ficha.tipoDeComida=='ALMUERZO' || ficha.tipoDeComida=='CENA'">
           <label for="bebida">Postre</label>
           <input type="text" [(ngModel)]="ficha.postre" 
             class="form-control" id="postre" name="postre" placeholder="Postre">
-        </div>
+          <small>Ingrese solo si consumio postre</small>
+          </div>
         <div class="form-check m-2">
             <input class="form-check-input" [(ngModel)]="ficha.tentacion" name="tentacion" type="checkbox"  id="defaultCheck1">
             <label class="form-check-label" for="defaultCheck1">
