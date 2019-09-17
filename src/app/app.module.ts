@@ -12,6 +12,7 @@ import { PacienteServiceService } from './paciente-service.service';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login.service';
 import { HeaderComponent } from './header/header.component';
+import { SqlWebService } from './sql-web.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule
     
   ],
-  providers: [FichaServiceService,PacienteServiceService,LoginService],
+  providers: [FichaServiceService,PacienteServiceService,LoginService,SqlWebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

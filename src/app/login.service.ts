@@ -36,6 +36,7 @@ export class LoginService {
    }
    public salir(){
      sessionStorage.removeItem('currentUser');
+     
      this.loggedIn=false;
    }
 }
