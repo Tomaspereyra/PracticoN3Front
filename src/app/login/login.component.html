@@ -1,0 +1,20 @@
+<div class="row mt-5 justify-content-center">
+        <div class="col-md-6">
+        
+            <form >
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Usuario</label>
+                     <input	type="email" #usuario name="usuario" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label> 
+                    <input type="password" #contrasena name="contrasena" class="form-control" id="exampleInputPassword1"
+                    placeholder="Contraseña">
+                </div>					
+                <button type="submit" (click)="login(usuario.value,contrasena.value,$event)" class="btn btn-primary">Submit</button>
+            </form>
+
+
+        </div>
+    </div>

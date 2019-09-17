@@ -9,12 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { FichaServiceService } from './ficha-service.service';
 import { AltapacienteComponent } from './altapaciente/altapaciente.component';
 import { PacienteServiceService } from './paciente-service.service';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FichaComponent,
-    AltapacienteComponent
+    AltapacienteComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { PacienteServiceService } from './paciente-service.service';
     ReactiveFormsModule
     
   ],
-  providers: [FichaServiceService,PacienteServiceService],
+  providers: [FichaServiceService,PacienteServiceService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

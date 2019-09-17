@@ -13,7 +13,7 @@ export class FichaServiceService {
 
    }
    public  guardar(ficha:Ficha){
-    return this.httpCliente.post<Ficha>(this.fichaUrl,ficha);
+    return this.httpCliente.post<Ficha>(this.fichaUrl,ficha,{responseType:'json'});
 
    }
 }

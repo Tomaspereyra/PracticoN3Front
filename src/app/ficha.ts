@@ -1,3 +1,5 @@
+import { Paciente } from './paciente';
+
 export class Ficha {
     tipoDeComida :string;
     comidaPrincipal: string;
@@ -6,7 +8,8 @@ export class Ficha {
     postre: string;
     tentacion: boolean;
     tieneHambre: boolean;
-    fechaYHora: Date = new Date()
+    fechaYHora: Date = new Date();
+    paciente: Paciente =  new Paciente();
     
 
 }

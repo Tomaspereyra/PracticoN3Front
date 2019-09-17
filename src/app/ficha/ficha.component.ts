@@ -11,12 +11,17 @@ import { FichaServiceService } from '../ficha-service.service';
 })
 export class FichaComponent implements OnInit {
   ficha:Ficha;
+  
   constructor(private route:ActivatedRoute,private router: Router, private fichaService: FichaServiceService) {
     this.ficha=new Ficha();
    }
 
   onSubmit(){
-    this.fichaService.guardar(this.ficha).subscribe();
+    this.ficha.paciente = JSON.parse(sessionStorage.getItem('currentUser'));
+    this.fichaService.guardar(this.ficha).subscribe(res=>{console.log(res)});
+    
+    alert("Ficha ingresada");
+
   }
 
   ngOnInit() {

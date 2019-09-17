@@ -21,4 +21,5 @@ export class PacienteServiceService {
     
      return this.http.post<Paciente>('http://localhost:8080/pacientes/insertar',paciente)
    }
+   
 }
