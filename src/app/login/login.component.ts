@@ -10,7 +10,7 @@ import { Paciente } from '../paciente';
 })
 export class LoginComponent implements OnInit {
   paciente: any;
-  
+  errorLogueo: boolean;
   constructor(private loginService: LoginService,private router: Router) { }
 
   ngOnInit() {
@@ -22,11 +22,10 @@ export class LoginComponent implements OnInit {
       res=>{
         this.paciente= res;
         this.loginService.setUsuarioLogueado(this.paciente);
-
-        console.log(this.paciente.id);
       },
       error=>{
         console.log("Error",error);
+        this.errorLogueo=true;
       },
       ()=> this.navigate()
     );

@@ -1,5 +1,8 @@
 <div class="row mt-5 justify-content-center">
         <div class="col-md-6">
+                <div class="alert alert-primary" *ngIf="errorLogueo" role="alert">
+                        Usuario o contraseña incorrectos
+                      </div>
         
             <form >
                 <div class="form-group">
@@ -14,6 +17,9 @@
                 </div>					
                 <button type="submit" (click)="login(usuario.value,contrasena.value,$event)" class="btn btn-primary">Submit</button>
             </form>
+            <small>¿No tienes una cuenta?</small>
+            <a class="mt-4 ml-2" *ngIf="!loginService.estaLogueado()" routerLink="/registrarPaciente">Registrate</a>
+
 
 
         </div>

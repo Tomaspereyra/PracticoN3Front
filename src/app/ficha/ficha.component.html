@@ -1,8 +1,5 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
-
-
-
 <div class="card my-5">
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #userForm="ngForm">
@@ -33,7 +30,7 @@
           <input type="text" [(ngModel)]="ficha.bebida" 
             class="form-control" id="bebida" name="bebida" placeholder="Bebida">
         </div>
-        <div class="form-group">
+        <div class="form-group" *ngIf="ficha.tipoDeComida!=ALMUERZO || ficha.tipoDeComida!=CENA ">
           <label for="bebida">Postre</label>
           <input type="text" [(ngModel)]="ficha.postre" 
             class="form-control" id="postre" name="postre" placeholder="Postre">

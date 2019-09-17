@@ -11,7 +11,7 @@ export class LoginService {
   private usuarioLogueado:Paciente;
   constructor(private http: HttpClient) {
     this.loginUrl='http://localhost:8080/pacientes/login';
-    this.loggedIn= false;
+    
    }
 
    public login(usuario:string, contrasena:string){
@@ -28,7 +28,7 @@ export class LoginService {
 
    }
    public getUsuarioLogueado(){
-     return JSON.parse(localStorage.getItem('currentUser'));
+     return JSON.parse(sessionStorage.getItem('currentUser'));
    }
 
    public estaLogueado(){
